@@ -1,11 +1,11 @@
-# Default values for rrssdemo.
+# Default values for helm.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
 replicaCount: 1
 
 image:
-  repository: mycluster.icp:8500/default/rrsstest
+  repository: mycluster.icp:8500/default/rrtest
   tag: latest
   pullPolicy: Always
 

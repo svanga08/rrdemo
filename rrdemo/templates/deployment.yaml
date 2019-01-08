@@ -1,22 +1,22 @@
 apiVersion: apps/v1beta2
 kind: Deployment
 metadata:
-  name: {{ template "rrssdemo.fullname" . }}
+  name: {{ template "helm.fullname" . }}
   labels:
-    app: {{ template "rrssdemo.name" . }}
-    chart: {{ template "rrssdemo.chart" . }}
+    app: {{ template "helm.name" . }}
+    chart: {{ template "helm.chart" . }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: {{ template "rrssdemo.name" . }}
+      app: {{ template "helm.name" . }}
       release: {{ .Release.Name }}
   template:
     metadata:
       labels:
-        app: {{ template "rrssdemo.name" . }}
+        app: {{ template "helm.name" . }}
         release: {{ .Release.Name }}
     spec:
       containers:
